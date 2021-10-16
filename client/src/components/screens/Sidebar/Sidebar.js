@@ -40,7 +40,14 @@ function Sidebar() {
           href="/create"
         />
         <SidebarLink text="Bookmarks" Icon={BookmarkBorderIcon} />
-        <SidebarLink text="My Articles" Icon={ListAltIcon} />
+        <SidebarLink
+          text="My Articles"
+          Icon={ListAltIcon}
+          className={`${
+            window.location.pathname == "/myArticles" ? "active" : "notActive"
+          }`}
+          href="/myArticles"
+        />
         <SidebarLink text="My Profile" Icon={PermIdentityIcon} />
         <SidebarLink text="Log Out" Icon={MoreHorizIcon} />
       </div>

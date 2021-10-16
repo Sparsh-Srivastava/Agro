@@ -9,6 +9,10 @@ const ArticleSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide the article body"],
   },
+  userId: {
+    type: String,
+    required: [true, "Please provide the user Id"],
+  },
 });
 
 const Article = mongoose.model("Article", ArticleSchema);

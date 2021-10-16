@@ -1,11 +1,12 @@
 const Article = require("../models/article");
 
 exports.create = async (req, res, next) => {
-  const { title, body } = req.body;
+  const { title, body, id } = req.body;
 
   const article = await Article.create({
     title,
     body,
+    userId: id,
   });
 
   await article.save();
@@ -68,4 +69,10 @@ exports.getOne = async (req, res) => {
 exports.getAll = async (req, res) => {
   const article = await Article.find();
   return res.send(article);
+};
+
+exports.getUserArticles = async (req, res) => {
+  id = req.params.id;
+  const userArticles = await Article.find({ userId: id });
+  return res.send(userArticles);
 };

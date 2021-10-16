@@ -32,6 +32,7 @@ const Create = () => {
         {
           title: title,
           body: htmlData,
+          id: localStorage.getItem("userId"),
         },
         config
       );
@@ -78,9 +79,9 @@ const Create = () => {
                 variant="outlined"
                 className="text_button"
                 style={{
-                  backgroundColor: "#17252a",
+                  backgroundColor: "#3eaf3a",
                   color: "#FEFFFF",
-                  width: "60%",
+                  width: "50%",
                 }}
                 onClick={createArticle}
               >

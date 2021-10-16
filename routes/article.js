@@ -7,6 +7,7 @@ const {
   update,
   getOne,
   getAll,
+  getUserArticles,
 } = require("../controller/article");
 
 router.route("/create").post(create);
@@ -18,5 +19,7 @@ router.route("/delete/:id").delete(deleteArticle);
 router.route("/getone/:id").get(getOne);
 
 router.route("/getall").get(getAll);
+
+router.route("/getUserArticles/:id").get(getUserArticles);
 
 module.exports = router;

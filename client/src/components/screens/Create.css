@@ -2,16 +2,31 @@
   margin: 8vh 5vh;
 }
 .card_chip {
-  border: solid 1px #17252a;
+  border: solid 1px #3eaf3a;
+  color: #3eaf3a;
   width: max-content;
   padding: 0.5vw 1vw;
   margin: 1vw 0;
   border-radius: 5px;
 }
 .title_card {
-  border: solid 3px black;
+  border: solid 3px #58b355;
+  color: #3eaf3a;
   font-weight: bold;
 }
 .public-DraftEditor-content {
   min-height: 40vh;
+}
+.article_card {
+  border: solid 5px #58b35588;
+  font-weight: bold;
+  text-transform: uppercase;
+  height: 150px;
+  border-radius: 5px;
+}
+.v_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 140px;
 }
