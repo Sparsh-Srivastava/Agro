@@ -7,6 +7,7 @@ import PrivateRoute from "./components/routing/privateRoute";
 import LoginScreen from "./components/screens/LoginScreen";
 import RegisterScreen from "./components/screens/RegisterScreen";
 import Dashboard from "./components/screens/Dashboard";
+import Create from "./components/screens/Create";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route exact path="/login" component={LoginScreen} />
           <Route exact path="/register" component={RegisterScreen} />
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          <PrivateRoute exact path="/create" component={Create} />
         </Switch>
       </div>
     </Router>

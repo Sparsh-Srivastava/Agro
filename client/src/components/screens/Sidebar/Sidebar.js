@@ -35,9 +35,9 @@ function Sidebar() {
           text="Write Article"
           Icon={Publish}
           className={`${
-            window.location.pathname == "/paper" ? "active" : "notActive"
+            window.location.pathname == "/create" ? "active" : "notActive"
           }`}
-          href="/paper"
+          href="/create"
         />
         <SidebarLink text="Bookmarks" Icon={BookmarkBorderIcon} />
         <SidebarLink text="My Articles" Icon={ListAltIcon} />

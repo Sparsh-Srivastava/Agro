@@ -5,7 +5,7 @@ function SidebarLink({ text, Icon, className, href }) {
     <div>
       <Link to={`${href}`} className="no-style">
         <div className={`link ${className}`}>
-          <Icon />
+          <Icon className="icon" />
           <h2>{text}</h2>
         </div>
       </Link>

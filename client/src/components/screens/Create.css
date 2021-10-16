@@ -1,0 +1,17 @@
+.right_grid_publish {
+  margin: 8vh 5vh;
+}
+.card_chip {
+  border: solid 1px #17252a;
+  width: max-content;
+  padding: 0.5vw 1vw;
+  margin: 1vw 0;
+  border-radius: 5px;
+}
+.title_card {
+  border: solid 3px black;
+  font-weight: bold;
+}
+.public-DraftEditor-content {
+  min-height: 40vh;
+}
