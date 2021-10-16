@@ -12,6 +12,7 @@ import userArticles from "./components/screens/userArticles";
 import Search from "./components/screens/Search";
 import Article from "./components/screens/Article";
 import Language from "./components/screens/LanguageFilter";
+import Landing from "./components/screens/Landing";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route exact path="/search" component={Search} />
           <Route exact path="/article/:id" component={Article} />
           <Route exact path="/search/:language" component={Language} />
+          <Route exact path="/" component={Landing} />
         </Switch>
       </div>
     </Router>

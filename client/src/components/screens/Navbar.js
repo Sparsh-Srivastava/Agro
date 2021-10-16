@@ -17,19 +17,19 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: "none",
   },
   title: {
-    border: "solid 2px white",
+    border: "solid 2px black",
     width: "fit-content",
     borderRadius: "10px",
     padding: "1vh 2vh",
     margin: "2vh 0 0 12vh",
-    color: "white",
+    color: "black",
   },
   login: {
     margin: "0 0 0 71vw",
     paddingBottom: "0.2vh",
     fontSize: "18px",
-    color: "white",
-    borderBottom: "solid 2px white",
+    color: "black",
+    borderBottom: "solid 2px black",
   },
 }));
 
@@ -44,7 +44,7 @@ const Navbar = () => {
     <AppBar position="static" className={classes.navbar}>
       <Toolbar>
         <Typography variant="h6" className={classes.title}>
-          PAPER
+          AGRO
         </Typography>
         <Button
           color="inherit"
@@ -53,7 +53,7 @@ const Navbar = () => {
             history.push("/login");
           }}
         >
-          Login
+          LOGIN
         </Button>
       </Toolbar>
     </AppBar>

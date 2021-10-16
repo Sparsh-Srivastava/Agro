@@ -1,0 +1,19 @@
+.middle {
+  width: fit-content;
+  margin: auto;
+  margin-top: 10vh;
+}
+.big_logo {
+  border-radius: 10px;
+  margin: auto;
+  border: solid 5px black;
+  width: fit-content;
+  font-size: 100px;
+  padding: 5vh;
+}
+.subtext {
+  font-size: 25px;
+  margin-top: 2vh;
+  max-width: 800px;
+  text-align: center;
+}
