@@ -1,12 +1,23 @@
 .name_tag {
-  background-color: #e1ffda;
-  font-weight: 600;
+  background-color: #fff;
+  border: solid 3px rgb(49, 49, 49);
+  color: rgb(49, 49, 49);
   font-size: 24px;
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
+  text-transform: capitalize;
   padding: 2vh 5vh;
   border-radius: 10px;
   word-spacing: 10px;
   letter-spacing: 1.2px;
   text-align: center;
+}
+.pie {
+  width: fit-content;
+  padding: 5vh 0;
+  margin: 5vh 0;
+  border-radius: 10px;
+  border: solid 5px #e1ffda;
+}
+.pie_title {
+  text-align: center;
+  font-weight: 500;
 }

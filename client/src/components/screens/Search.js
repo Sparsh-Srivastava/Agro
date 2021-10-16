@@ -39,7 +39,7 @@ const Search = () => {
     const getArticles = async () => {
       try {
         const res = await axios.get(`http://localhost:5000/api/article/getAll`);
-        setData(res.data.reverse().slice(-4));
+        setData(res.data.slice(-4));
       } catch (err) {
         console.log(err);
       }
