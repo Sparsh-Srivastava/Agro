@@ -1,12 +1,13 @@
 const Article = require("../models/article");
 
 exports.create = async (req, res, next) => {
-  const { title, body, id } = req.body;
+  const { title, body, id, language } = req.body;
 
   const article = await Article.create({
     title,
     body,
     userId: id,
+    language,
   });
 
   await article.save();

@@ -33,6 +33,8 @@ const Article = (props) => {
           <Box className="right_grid_publish">
             <h1>{data.title}</h1>
             <br />
+            <div className="subject_pill">{data.language}</div>
+            <br />
             {parse(data.body)}
           </Box>
         </Grid>

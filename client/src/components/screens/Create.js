@@ -12,10 +12,31 @@ import { useHistory } from "react-router-dom";
 const Create = () => {
   let history = useHistory();
 
+  async function predict(query) {
+    var myParams = {
+      data: query,
+    };
+
+    if (query != "") {
+      await axios
+        .post("http://localhost:7000/predict", myParams)
+        .then(function (response) {
+          console.log(response);
+          setLanguage(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    } else {
+      alert("The search query cannot be empty");
+    }
+  }
+
   const [editorState, setData] = useState(EditorState.createEmpty());
   const [htmlData, setHtmlData] = useState("");
 
   const [title, setTitle] = useState("");
+  const [language, setLanguage] = useState("");
 
   const createArticle = async (e) => {
     e.preventDefault();
@@ -33,6 +54,7 @@ const Create = () => {
           title: title,
           body: htmlData,
           id: localStorage.getItem("userId"),
+          language: language,
         },
         config
       );
@@ -75,6 +97,26 @@ const Create = () => {
             />
             <br />
             <center>
+              <Button
+                variant="outlined"
+                className="text_button"
+                style={{
+                  backgroundColor: "#3eaf3a",
+                  color: "#FEFFFF",
+                  width: "20%",
+                }}
+                onClick={() => {
+                  if (title) {
+                    predict(`${title}`);
+                  } else {
+                    console.log("Title not available");
+                  }
+                }}
+              >
+                DETECT LANGUAGE
+              </Button>
+              <br />
+              <br />
               <Button
                 variant="outlined"
                 className="text_button"

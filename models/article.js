@@ -13,6 +13,10 @@ const ArticleSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please provide the user Id"],
   },
+  language: {
+    type: String,
+    required: [true, "Please provide the language"],
+  },
 });
 
 const Article = mongoose.model("Article", ArticleSchema);

@@ -46,7 +46,7 @@ const UserArticles = () => {
             <Grid container spacing={2}>
               {articles.map((article) => (
                 <Grid item xs={3} lg={3}>
-                  <Link to={`/article/${article._id}`}>
+                  <Link to={`/article/${article._id}`} className="Link">
                     <div className="article_card">
                       <center>
                         <div className="v_text">{article.title}</div>

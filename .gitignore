@@ -8,6 +8,8 @@ node_modules/
 .pnp.js
 model_pickle
 
+Language_Detection
+
 # testing
 /coverage
 

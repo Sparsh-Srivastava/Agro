@@ -30,3 +30,15 @@
   align-items: center;
   height: 140px;
 }
+.Link {
+  text-decoration: none;
+  color: black;
+}
+.subject_pill {
+  border: solid 2px #3eaf3a;
+  width: fit-content;
+  padding: 1vh 3vh;
+  border-radius: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
