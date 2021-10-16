@@ -9,10 +9,12 @@ import {
 } from "@material-ui/core";
 import Sidebar from "../../components/screens/Sidebar/Sidebar";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import "./Search.css";
 
 const Search = () => {
   const [data, setData] = useState([]);
+  const [search, setSearch] = useState("");
 
   const useStyles = makeStyles((theme) => ({
     paper_topic_card: {
@@ -37,7 +39,7 @@ const Search = () => {
     const getArticles = async () => {
       try {
         const res = await axios.get(`http://localhost:5000/api/article/getAll`);
-        setData(res.data);
+        setData(res.data.reverse().slice(-4));
       } catch (err) {
         console.log(err);
       }
@@ -61,6 +63,9 @@ const Search = () => {
                     type="text"
                     placeholder="SEARCH FOR ARTICLES"
                     className="text_field"
+                    onChange={(e) => {
+                      setSearch(e.target.value);
+                    }}
                   />
                 </center>
               </Grid>
@@ -86,44 +91,52 @@ const Search = () => {
               </Grid>
               <Grid container spacing={1}>
                 <Grid item xs={3} lg={3} spacing={0}>
-                  <Paper
-                    elevation={4}
-                    className={`card_bg_image_yellow ${classes.paper_topic_card}`}
-                  >
-                    <Typography variant="h4" className={classes.paper_text}>
-                      ENGLISH
-                    </Typography>
-                  </Paper>
+                  <Link to={`/search/English`} className="Link">
+                    <Paper
+                      elevation={4}
+                      className={`card_bg_image_yellow ${classes.paper_topic_card}`}
+                    >
+                      <Typography variant="h4" className={classes.paper_text}>
+                        ENGLISH
+                      </Typography>
+                    </Paper>
+                  </Link>
                 </Grid>
                 <Grid item xs={3} lg={3} spacing={0}>
-                  <Paper
-                    elevation={4}
-                    className={`card_bg_image ${classes.paper_topic_card}`}
-                  >
-                    <Typography variant="h4" className={classes.paper_text}>
-                      हिंदी
-                    </Typography>
-                  </Paper>
+                  <Link to={`/search/Hindi`} className="Link">
+                    <Paper
+                      elevation={4}
+                      className={`card_bg_image ${classes.paper_topic_card}`}
+                    >
+                      <Typography variant="h4" className={classes.paper_text}>
+                        हिंदी
+                      </Typography>
+                    </Paper>
+                  </Link>
                 </Grid>
                 <Grid item xs={3} lg={3} spacing={0}>
-                  <Paper
-                    elevation={4}
-                    className={`card_bg_image_green ${classes.paper_topic_card}`}
-                  >
-                    <Typography variant="h4" className={classes.paper_text}>
-                      Français
-                    </Typography>
-                  </Paper>
+                  <Link to={`/search/French`} className="Link">
+                    <Paper
+                      elevation={4}
+                      className={`card_bg_image_green ${classes.paper_topic_card}`}
+                    >
+                      <Typography variant="h4" className={classes.paper_text}>
+                        Français
+                      </Typography>
+                    </Paper>
+                  </Link>
                 </Grid>
                 <Grid item xs={3} lg={3} spacing={0}>
-                  <Paper
-                    elevation={4}
-                    className={`card_bg_image_pink ${classes.paper_topic_card}`}
-                  >
-                    <Typography variant="h4" className={classes.paper_text}>
-                      தமிழ்
-                    </Typography>
-                  </Paper>
+                  <Link to={`/search/Tamil`} className="Link">
+                    <Paper
+                      elevation={4}
+                      className={`card_bg_image_pink ${classes.paper_topic_card}`}
+                    >
+                      <Typography variant="h4" className={classes.paper_text}>
+                        தமிழ்
+                      </Typography>
+                    </Paper>
+                  </Link>
                 </Grid>
                 <Grid item xs={3} lg={3} spacing={0}>
                   <Paper
@@ -169,15 +182,27 @@ const Search = () => {
             </div>
             <div className="card_chip">RECENT ARTICLES</div>
             <Grid container spacing={2}>
-              {data.map((article) => (
-                <Grid item xs={3} lg={3}>
-                  <div className="article_card">
-                    <center>
-                      <div className="v_text">{article.title}</div>
-                    </center>
-                  </div>
-                </Grid>
-              ))}
+              {data
+                .filter((val) => {
+                  if (search == "") {
+                    return val;
+                  } else if (
+                    val.title.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return val;
+                  }
+                })
+                .map((article) => (
+                  <Grid item xs={3} lg={3}>
+                    <Link to={`/article/${article._id}`} className="Link">
+                      <div className="article_card">
+                        <center>
+                          <div className="v_text">{article.title}</div>
+                        </center>
+                      </div>
+                    </Link>
+                  </Grid>
+                ))}
             </Grid>
           </Box>
         </Grid>

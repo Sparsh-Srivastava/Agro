@@ -73,7 +73,13 @@ exports.getAll = async (req, res) => {
 };
 
 exports.getUserArticles = async (req, res) => {
-  id = req.params.id;
+  const id = req.params.id;
   const userArticles = await Article.find({ userId: id });
   return res.send(userArticles);
+};
+
+exports.languageFilter = async (req, res) => {
+  const language = req.params.language;
+  const Articles = await Article.find({ language: language });
+  res.json({ Articles });
 };

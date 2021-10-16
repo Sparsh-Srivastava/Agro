@@ -11,6 +11,7 @@ import Create from "./components/screens/Create";
 import userArticles from "./components/screens/userArticles";
 import Search from "./components/screens/Search";
 import Article from "./components/screens/Article";
+import Language from "./components/screens/LanguageFilter";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <PrivateRoute exact path="/myArticles" component={userArticles} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/article/:id" component={Article} />
+          <Route exact path="/search/:language" component={Language} />
         </Switch>
       </div>
     </Router>

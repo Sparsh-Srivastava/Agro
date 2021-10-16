@@ -54,6 +54,12 @@ exports.register = async (req, res, next) => {
   }
 };
 
+exports.getUser = async (req, res, next) => {
+  const id = req.params.id;
+  const user = await User.findById(id);
+  return res.send(user);
+};
+
 const sendToken = (user, statusCode, res) => {
   const token = user.getSignedJwtToken();
   res.status(statusCode).json({ sucess: true, token, id: user._id });
