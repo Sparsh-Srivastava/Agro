@@ -10,7 +10,7 @@ const LoginScreen = ({ history }) => {
 
   useEffect(() => {
     if (localStorage.getItem("authToken")) {
-      history.push(`/dashboard/${localStorage.getItem("userId")}`);
+      history.push(`/dashboard`);
     }
   }, [history]);
 
@@ -32,7 +32,7 @@ const LoginScreen = ({ history }) => {
 
       localStorage.setItem("authToken", data.token);
       localStorage.setItem("userId", data.id);
-      window.location.href = `/dashboard/${localStorage.getItem("userId")}`;
+      window.location.href = `/dashboard`;
     } catch (error) {
       setError(error.response.data.error);
       setTimeout(() => {
@@ -59,12 +59,7 @@ const LoginScreen = ({ history }) => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="password">
-            Password:{" "}
-            <Link to="/forgotpassword" className="login-screen__forgotpassword">
-              Forgot Password?
-            </Link>
-          </label>
+          <label htmlFor="password">Password: </label>
           <input
             type="password"
             required
@@ -79,6 +74,9 @@ const LoginScreen = ({ history }) => {
         <button type="submit" className="btn btn-primary">
           Login
         </button>
+        <span className="register-screen__subtext">
+          Don't have an account? <Link to="/register">Register</Link>
+        </span>
       </form>
     </div>
   );
