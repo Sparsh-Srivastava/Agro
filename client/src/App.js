@@ -9,6 +9,8 @@ import RegisterScreen from "./components/screens/RegisterScreen";
 import Dashboard from "./components/screens/Dashboard";
 import Create from "./components/screens/Create";
 import userArticles from "./components/screens/userArticles";
+import Search from "./components/screens/Search";
+import Article from "./components/screens/Article";
 
 const App = () => {
   return (
@@ -20,6 +22,8 @@ const App = () => {
           <PrivateRoute exact path="/dashboard" component={Dashboard} />
           <PrivateRoute exact path="/create" component={Create} />
           <PrivateRoute exact path="/myArticles" component={userArticles} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/article/:id" component={Article} />
         </Switch>
       </div>
     </Router>

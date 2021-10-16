@@ -10,7 +10,9 @@ const Dashboard = () => {
         <Sidebar />
       </Grid>
       <Grid item xs={9} lg={10}>
-        <h1>Next to the sidebar</h1>
+        <div className="right_grid_publish">
+          <h1>Next to the sidebar</h1>
+        </div>
       </Grid>
     </Grid>
   );

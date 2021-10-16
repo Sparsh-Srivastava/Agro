@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Grid, Box, Button, TextField } from "@material-ui/core";
 import Sidebar from "../../components/screens/Sidebar/Sidebar";
-import parse from "html-react-parser";
+import { Link } from "react-router-dom";
 
 const UserArticles = () => {
   const [articles, setArticles] = useState([]);
@@ -43,14 +43,16 @@ const UserArticles = () => {
               <div className="card_chip title_card">MY ARTICLES</div>
             </center>
             <br />
-            <Grid container>
+            <Grid container spacing={2}>
               {articles.map((article) => (
                 <Grid item xs={3} lg={3}>
-                  <div className="article_card">
-                    <center>
-                      <div className="v_text">{article.title}</div>
-                    </center>
-                  </div>
+                  <Link to={`/article/${article._id}`}>
+                    <div className="article_card">
+                      <center>
+                        <div className="v_text">{article.title}</div>
+                      </center>
+                    </div>
+                  </Link>
                 </Grid>
               ))}
             </Grid>
